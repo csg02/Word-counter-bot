@@ -8,7 +8,7 @@ Discord.py
 
 ## Get started
 ```
-Just fill in the `config.json` Token field with your bot token
+Just fill in the config.json Token field with your bot token
 ```
 
 
