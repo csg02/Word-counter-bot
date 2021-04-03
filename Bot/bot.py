@@ -3,9 +3,9 @@ from discord.ext import commands
 import json
 intents = discord.Intents.default()
 intents.guild_messages = True
-bot = commands.Bot(command_prefix='w-', case_insensitive=True, intents=intents, allowed_mentions=discord.AllowedMentions.none())
-configfile = open('config.json', 'r');config = json.load(configfile)
 
+configfile = open('config.json', 'r');config = json.load(configfile)
+bot = commands.Bot(command_prefix=config['Prefix'], case_insensitive=True, intents=intents, allowed_mentions=discord.AllowedMentions.none())
 @bot.event
 async def on_ready():
     print('Word bot is ready.')
