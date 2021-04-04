@@ -20,7 +20,7 @@ async def on_message(message):
     await bot.process_commands(message)
     if message.author.bot:
         return
-    for word in message.content.split():
+    for word in message.content.lower().split():
        
         if not str(message.guild.id) in data:
             data[str(message.guild.id)] = {}
@@ -45,7 +45,7 @@ async def word(ctx, word: str):
         file.close()
         return await ctx.send('Guild is not in database, try saying some words!')
     if word in data[str(ctx.guild.id)]:
-        await ctx.send(f'**{word}** has been said `{data[str(ctx.guild.id)][word]}` time(s)')
+        await ctx.send(f'**{word.lower()}** has been said `{data[str(ctx.guild.id)][word]}` time(s)')
         file.close()
     else:
         await ctx.send('That word has not been said in this server!')
