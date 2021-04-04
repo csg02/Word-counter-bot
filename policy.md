@@ -1,5 +1,5 @@
 ## What data does the bot store?
-Word Counter stores all words said by a user and uses the server ID to identify what words were said where.
+Word Counter stores all words said in a server and uses the server ID to identify what words were said where.
 
 ## Why is this data needed?
 The data is needed so that it can tell you how many times a certain word has been said.
