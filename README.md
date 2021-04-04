@@ -14,7 +14,7 @@ Just fill in the config.json Token field with your bot token.
 
 
 
-### Improvements
+## Improvements
 
 Feel free to PR improvements as I am way too lazy to extend this much further than it's original purpose.
 
