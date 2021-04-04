@@ -1,4 +1,5 @@
 import discord
+import re
 from discord.ext import commands
 import json
 from discord_slash import SlashCommand, SlashContext
@@ -20,12 +21,18 @@ async def on_message(message):
     if message.author.bot:
         return
     for word in message.content.split():
+       
         if not str(message.guild.id) in data:
             data[str(message.guild.id)] = {}
+        if len(word) > 15: # Not a word
+            return
+        if re.search('\d', word): # Word's can't contain numbers
+            return
         if word not in data[str(message.guild.id)]:
             data[str(message.guild.id)][word] = 0
         data[str(message.guild.id)][word] += 1
         dumps = open("words.json", "w");json.dump(data, dumps, indent = 4)
+        file.close()
         
         
 
