@@ -24,7 +24,7 @@ async def on_message(message):
        
         if not str(message.guild.id) in data:
             data[str(message.guild.id)] = {}
-        if len(word) > 15: # Not a word
+        if len(word) > 15: # Too long
             return
         if re.search('\d', word): # Word's can't contain numbers
             return
