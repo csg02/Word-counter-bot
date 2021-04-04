@@ -1,14 +1,16 @@
 # Word counter bot
-A discord bot made in python which counts every word said in a discord server and stores them in a .json file.
+A discord slash bot made in python which counts every word said in a discord server and stores them in a .json file.
 
 ## Requirements:
 ```
-Discord.py
+discord.py
+discord-py-slash-command
+
 ```
 
 ## Get started
 ```
-Just fill in the config.json Token field with your bot token and the Prefix field with your desired command prefix.
+Just fill in the config.json Token field with your bot token.
 ```
 
 
