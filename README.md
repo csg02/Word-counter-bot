@@ -1,6 +1,6 @@
 Invite my 24/7 hosted version [here](https://discord.com/api/oauth2/authorize?client_id=828031905776533554&permissions=66560&scope=applications.commands%20bot)
 # Word counter bot
-A discord slash bot made in python which counts every word said in a discord server and stores them in a .json file.
+A discord slash command bot made in python which counts every word said in a discord server and stores them in a .json file.
 
 ## Requirements:
 ```
