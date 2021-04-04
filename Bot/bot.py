@@ -24,25 +24,14 @@ async def on_message(message):
             data[str(message.guild.id)] = {}
         if word not in data[str(message.guild.id)]:
             data[str(message.guild.id)][word] = 0
-  
         data[str(message.guild.id)][word] += 1
-   
-        dumps = open("words.json", "w")
-          
-        json.dump(data, dumps, indent = 4)
+        dumps = open("words.json", "w");json.dump(data, dumps, indent = 4)
+        
         
 
-@slash.slash(name='word', description='See how many times a word has been said in this server',options=[
-               create_option(
-                 name="word",
-                 description="The word to get the word count for",
-                 option_type=3,
-                 required=True
-               )
-             ])
+@slash.slash(name='word', description='See how many times a word has been said in this server', options=[create_option(name="word", description="The word to get the word count for", option_type=3, required=True)])
 async def word(ctx, word: str):
-    file = open('words.json', 'r')
-    data = json.load(file)
+    file = open('words.json', 'r');data = json.load(file)
     if str(ctx.guild.id) not in data:
         return await ctx.send('Guild is not in database, try saying some words!')
     if word in data[str(ctx.guild.id)]:
