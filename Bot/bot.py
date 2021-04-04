@@ -28,6 +28,8 @@ async def on_message(message):
             return
         if re.search('\d', word): # Word's can't contain numbers
             return
+        if re.search('[ -\/:-@\[-\`{-~]', word): # No special characters allowed.
+            return
         if word not in data[str(message.guild.id)]:
             data[str(message.guild.id)][word] = 0
         data[str(message.guild.id)][word] += 1
