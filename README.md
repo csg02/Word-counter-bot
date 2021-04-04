@@ -19,3 +19,5 @@ Just fill in the config.json Token field with your bot token.
 ```
 Feel free to PR improvements as I am way too lazy to extend this much further than it's original purpose.
 ```
+
+**When creating your OAuth2 link, remember to select `bot` and `applications.commands` otherwise this will not work**
