@@ -33,8 +33,8 @@ async def on_message(message):
 async def word(ctx, word: str):
     file = open('words.json', 'r');data = json.load(file)
     if str(ctx.guild.id) not in data:
-        return await ctx.send('Guild is not in database, try saying some words!')
         file.close()
+        return await ctx.send('Guild is not in database, try saying some words!')
     if word in data[str(ctx.guild.id)]:
         await ctx.send(f'**{word}** has been said `{data[str(ctx.guild.id)][word]}` time(s)')
         file.close()
