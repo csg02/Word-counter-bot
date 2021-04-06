@@ -19,10 +19,7 @@ async def on_ready():
     print('Word bot is ready.')
 @bot.event
 async def on_message(message):
-    try:
-        file = open('words.json', 'r');data = json.load(file)
-    except json.JsonDecodeError:
-        return
+    file = open('words.json', 'r');data = json.load(file)
     await bot.process_commands(message)
     if message.author.bot:
         return
