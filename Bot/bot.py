@@ -31,13 +31,13 @@ async def on_message(message):
         if not str(message.guild.id) in data:
             data[str(message.guild.id)] = {}
         if len(word) < 2: # Too short
-            return
+            continue
         if len(word) > 15: # Too long
-            return
+            continue
         if re.search('\d', word): # Word's can't contain numbers
-            return
+            continue
         if re.search('[ -\/:-@\[-\`{-~]', word): # No special characters allowed.
-            return
+            continue
         if word not in data[str(message.guild.id)]:
             data[str(message.guild.id)][word] = 0
         data[str(message.guild.id)][word] += 1
